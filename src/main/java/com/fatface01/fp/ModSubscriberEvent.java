@@ -1,5 +1,6 @@
 package com.fatface01.fp;
 
+import com.fatface01.fp.init.ModItemGroups;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -12,7 +13,7 @@ public class ModSubscriberEvent {
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                setup(new Item(new Item.Properties()), "a")
+                setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "a")
         );
     }
 
