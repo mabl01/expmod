@@ -1,6 +1,8 @@
 package com.fatface01.fp;
 
 import com.fatface01.fp.init.ModItemGroups;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -14,6 +16,15 @@ public class ModSubscriberEvent {
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
                 setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "a")
+        );
+    }
+
+    @SubscribeEvent
+    public static void onRegisterBlocks(RegistryEvent.Register<Block> event) {
+        event.getRegistry().registerAll(
+                setup(new Block(
+                        Block.Properties.create(Material.ROCK)
+                                .hardnessAndResistance(3.0F, 3.0F)), "a_block")
         );
     }
 

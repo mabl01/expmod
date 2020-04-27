@@ -15,7 +15,6 @@ public final class ModItemGroups {
 
     public static final class ModItemGroup extends ItemGroup {
 
-        @Nonnull
         private final Supplier<ItemStack> iconSupplier;
 
         public ModItemGroup(@Nonnull final String name, @Nonnull final Supplier<ItemStack> iconSupplier) {
