@@ -1,0 +1,6 @@
+{
+  "parent": "item/pufferfish",
+  "textures": {
+    "layer0": "fp:items/mushroom_extract"
+  }
+}

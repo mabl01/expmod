@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @EventBusSubscriber(modid = FP.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModSubscriberEvent {
+
     public static Block aBlock = new Block(
             Block.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3.0F, 3.0F));
@@ -24,7 +26,10 @@ public class ModSubscriberEvent {
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
                 setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "a"),
-                setup(aBlockItem, "a_block_item")
+                setup(aBlockItem, "a_block_item"),
+                setup(new Item(new Item.Properties()
+                        .group(ModItemGroups.MOD_ITEM_GROUP).maxStackSize(1).containerItem(Items.GLASS_BOTTLE)),
+                        "mushroom_extract")
         );
     }
 
